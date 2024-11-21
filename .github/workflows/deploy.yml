@@ -1,0 +1,101 @@
+name: Deploy to Google Cloud Storage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy and Configure Bucket
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Step 3: Install dependencies and build
+      - name: Install dependencies and build
+        env:
+          PUBLIC_URL: "https://storage.googleapis.com/react-essentials-bucket"
+        run: |
+          npm ci
+          npm run build
+
+      # Step: Fix CSS file URLs
+      - name: Fix CSS file URLs
+        run: |
+          echo "Fixing incorrect font URLs in CSS files..."
+          sed -i 's|url(/static/media/|url(https://storage.googleapis.com/react-essentials-bucket/static/media/|g' build/static/css/*.css
+          echo "Verifying fixed URLs in CSS:"
+          grep "url(https://storage.googleapis.com/react-essentials-bucket/static/media/" build/static/css/*.css
+
+      # Step 4: Debug directory structure
+      - name: Debug Directory Structure
+        run: |
+          echo "Listing the current directory structure..."
+          pwd
+          ls -R
+
+      # Step 5: Authenticate with Google Cloud
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      # Step 6: Explicitly Authenticate gcloud
+      - name: Explicitly Authenticate Google Cloud
+        run: |
+          gcloud auth activate-service-account --key-file="${GOOGLE_APPLICATION_CREDENTIALS}"
+
+      # Step 7: Debug Google Account
+      - name: Debug Google Account
+        run: |
+          gcloud auth list
+
+      # Step 8: Upload files to Google Cloud Storage
+      - name: Upload files to Google Cloud Storage
+        uses: google-github-actions/upload-cloud-storage@v2
+        with:
+          path: build/
+          destination: react-essentials-bucket/
+
+      # Step 9: Synchronize files from `build` to root of bucket
+      - name: Move files and folders from build to root
+        run: |
+          gsutil rsync -r gs://react-essentials-bucket/build gs://react-essentials-bucket/
+
+      # Step 10: Remove the `build` folder
+      - name: Remove build folder from bucket
+        run: |
+          gsutil rm -r gs://react-essentials-bucket/build
+
+      # Step 11: Grant Public Access to the Bucket
+      - name: Grant Public Access to the Bucket
+        run: |
+          gsutil iam ch allUsers:objectViewer gs://react-essentials-bucket
+      
+      # Step 12: Configure CORS for the Bucket
+      - name: Apply CORS Policy
+        run: |
+          echo '[
+            {
+              "origin": ["*"],
+              "method": ["GET", "HEAD", "OPTIONS"],
+              "responseHeader": ["Content-Type", "Access-Control-Allow-Origin"],
+              "maxAgeSeconds": 3600
+            }
+          ]' > cors.json
+          gsutil cors set cors.json gs://react-essentials-bucket
+
+      # Step 13: Verify the Contents of the Bucket
+      - name: Verify the Contents of the Bucket
+        run: |
+          gsutil ls -r gs://react-essentials-bucket/
