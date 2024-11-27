@@ -49,6 +49,12 @@ const IndexDropdown = () => {
         >
           Component-Based Architecture
         </Link>
+        <Link
+          to="/key-features/jsxinreact"
+          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        >
+          JSX (JavaScript XML) in React
+        </Link>
       </div>
     </>
   );

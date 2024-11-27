@@ -16,7 +16,6 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/key-features" component={KeyFeatures} />
-      
       <Route path="/" exact component={Index} />
       <Redirect from="*" to="/" />
     </Switch>

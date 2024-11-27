@@ -8,6 +8,7 @@ import Header from "components/Headers/Header";
 
 // views
 import ComponentBasedArchitecture from "views/key-features/ComponentBasedArchitecture";
+import JsxInReact from "views/key-features/JsxInReact";
 
 export default function KeyFeatures() {
   return (
@@ -23,6 +24,10 @@ export default function KeyFeatures() {
             <Route
               path="/key-features/componentbasedarchitecture"
               component={ComponentBasedArchitecture}
+            />
+            <Route
+              path="/key-features/jsxinreact"
+              component={JsxInReact}
             />
           </Switch>
         </div>
