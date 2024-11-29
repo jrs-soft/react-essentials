@@ -9,6 +9,7 @@ import Header from "components/Headers/Header";
 // views
 import ComponentBasedArchitecture from "views/key-features/ComponentBasedArchitecture";
 import JsxInReact from "views/key-features/JsxInReact";
+import VirtualDom from "views/key-features/VirtualDom";
 
 export default function KeyFeatures() {
   return (
@@ -28,6 +29,10 @@ export default function KeyFeatures() {
             <Route
               path="/key-features/jsxinreact"
               component={JsxInReact}
+            />
+            <Route
+              path="/key-features/virtualdom"
+              component={VirtualDom}
             />
           </Switch>
         </div>
