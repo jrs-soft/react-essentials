@@ -2,26 +2,26 @@ import React from "react";
 
 export default function DeclarativeProgramming() {
   return (
-    <div class="p-8 space-y-8">
-      <header class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-900">Declarative Programming in React</h1>
-        <p class="text-lg text-gray-600 mt-2">
+    <div className="p-8 space-y-8">
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">Declarative Programming in React</h1>
+        <p className="text-lg text-gray-600 mt-2">
           A guide to understanding how React simplifies UI development using declarative programming principles.
         </p>
       </header>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800">What is Declarative Programming?</h2>
-        <p class="mt-4">
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800">What is Declarative Programming?</h2>
+        <p className="mt-4">
           Declarative programming is a style where developers specify&nbsp;
           <strong>what</strong> the application should do, rather than detailing
           <strong>how</strong> it should achieve it. React uses this approach to build User Interfaces (UI).
         </p>
       </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800">How It Works in React</h2>
-        <ol class="list-decimal list-inside mt-4 space-y-4">
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800">How It Works in React</h2>
+        <ol className="list-decimal list-inside mt-4 space-y-4">
           <li>
             <strong>Describing UI in Terms of State:</strong> Developers specify how the UI should look for a given state.
             React updates the DOM automatically when the state changes.
@@ -35,13 +35,13 @@ export default function DeclarativeProgramming() {
         </ol>
       </section>
 
-      <section class="mb-8">
-        <h3 class="text-xl font-semibold text-gray-700">Code Example</h3>
-        <p class="mt-4">
+      <section className="mb-8">
+        <h3 className="text-xl font-semibold text-gray-700">Code Example</h3>
+        <p className="mt-4">
           Below is an example of a simple counter component using React:
         </p>
         <pre className="bg-white p-4">
-          <code class="block whitespace-pre text-sm">
+          <code className="block whitespace-pre text-sm">
             {`function Counter() {
     const [count, setCount] = React.useState(0);
 
@@ -56,9 +56,9 @@ export default function DeclarativeProgramming() {
         </pre>
       </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800">Benefits of Declarative Programming</h2>
-        <ul class="list-disc list-inside mt-4 space-y-4">
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800">Benefits of Declarative Programming</h2>
+        <ul className="list-disc list-inside mt-4 space-y-4">
           <li>
             <strong>Simplifies Development:</strong> Focuses on what the UI should look like instead of managing the DOM.
           </li>
@@ -74,38 +74,38 @@ export default function DeclarativeProgramming() {
         </ul>
       </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800">Imperative vs Declarative</h2>
-        <table class="table-auto w-full mt-4 border-collapse border border-gray-200 text-left text-gray-700">
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800">Imperative vs Declarative</h2>
+        <table className="table-auto w-full mt-4 border-collapse border border-gray-200 text-left text-gray-700">
           <thead>
-            <tr class="bg-gray-100">
-              <th class="px-4 py-2 border border-gray-200">Aspect</th>
-              <th class="px-4 py-2 border border-gray-200">Declarative (React)</th>
-              <th class="px-4 py-2 border border-gray-200">Imperative</th>
+            <tr className="bg-gray-100">
+              <th className="px-4 py-2 border border-gray-200">Aspect</th>
+              <th className="px-4 py-2 border border-gray-200">Declarative (React)</th>
+              <th className="px-4 py-2 border border-gray-200">Imperative</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="px-4 py-2 border border-gray-200">Definition</td>
-              <td class="px-4 py-2 border border-gray-200">Describes what the UI should look like.</td>
-              <td class="px-4 py-2 border border-gray-200">Specifies how to update the UI step-by-step.</td>
+              <td className="px-4 py-2 border border-gray-200">Definition</td>
+              <td className="px-4 py-2 border border-gray-200">Describes what the UI should look like.</td>
+              <td className="px-4 py-2 border border-gray-200">Specifies how to update the UI step-by-step.</td>
             </tr>
             <tr>
-              <td class="px-4 py-2 border border-gray-200">Ease of Use</td>
-              <td class="px-4 py-2 border border-gray-200">Easier to write and understand.</td>
-              <td class="px-4 py-2 border border-gray-200">Can become complex with large apps.</td>
+              <td className="px-4 py-2 border border-gray-200">Ease of Use</td>
+              <td className="px-4 py-2 border border-gray-200">Easier to write and understand.</td>
+              <td className="px-4 py-2 border border-gray-200">Can become complex with large apps.</td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800">Real-World Example of Declarative React</h2>
-        <p class="mt-4">
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800">Real-World Example of Declarative React</h2>
+        <p className="mt-4">
           Imagine a shopping cart UI where the total price updates dynamically as items are added or removed. Here's how you can implement it in React:
         </p>
         <pre className="bg-white p-4">
-          <code class="block whitespace-pre text-sm">
+          <code className="block whitespace-pre text-sm">
             {`function ShoppingCart() {
     const [cart, setCart] = React.useState([
         { id: 1, name: 'Apple', price: 1.5 },
@@ -135,14 +135,14 @@ export default function DeclarativeProgramming() {
 }`}
           </code>
         </pre>
-        <p class="mt-4">
+        <p className="mt-4">
           In this example, React dynamically updates the list and total price without manual DOM manipulation, demonstrating the power of declarative programming.
         </p>
       </section>
 
-      <footer class="mt-8">
-        <h2 class="text-2xl font-semibold mb-4">Conclusion</h2>
-        <p class="text-gray-600">
+      <footer className="mt-8">
+        <h2 className="text-2xl font-semibold mb-4">Conclusion</h2>
+        <p className="text-gray-600">
           By embracing declarative programming, React simplifies UI development and makes it easier to build scalable, maintainable applications.
         </p>
       </footer>

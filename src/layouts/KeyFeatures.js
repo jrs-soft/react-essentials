@@ -11,6 +11,7 @@ import ComponentBasedArchitecture from "views/key-features/ComponentBasedArchite
 import JsxInReact from "views/key-features/JsxInReact";
 import VirtualDom from "views/key-features/VirtualDom";
 import DeclarativeProgramming from "views/key-features/DeclarativeProgramming";
+import UnidirectionalDataFlow from "views/key-features/UnidirectionalDataFlow";
 
 export default function KeyFeatures() {
   return (
@@ -38,6 +39,10 @@ export default function KeyFeatures() {
             <Route
               path="/key-features/declarativeprogramming"
               component={DeclarativeProgramming}
+            />
+            <Route
+              path="/key-features/unidirectionaldataflow"
+              component={UnidirectionalDataFlow}
             />
           </Switch>
         </div>
