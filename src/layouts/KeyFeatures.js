@@ -12,6 +12,7 @@ import JsxInReact from "views/key-features/JsxInReact";
 import VirtualDom from "views/key-features/VirtualDom";
 import DeclarativeProgramming from "views/key-features/DeclarativeProgramming";
 import UnidirectionalDataFlow from "views/key-features/UnidirectionalDataFlow";
+import StateManagement from "views/key-features/StateManagement";
 
 export default function KeyFeatures() {
   return (
@@ -43,6 +44,10 @@ export default function KeyFeatures() {
             <Route
               path="/key-features/unidirectionaldataflow"
               component={UnidirectionalDataFlow}
+            />
+            <Route
+              path="/key-features/statemanagement"
+              component={StateManagement}
             />
           </Switch>
         </div>
