@@ -13,6 +13,7 @@ import VirtualDom from "views/key-features/VirtualDom";
 import DeclarativeProgramming from "views/key-features/DeclarativeProgramming";
 import UnidirectionalDataFlow from "views/key-features/UnidirectionalDataFlow";
 import StateManagement from "views/key-features/StateManagement";
+import RichEcosystem from "views/key-features/RichEcosystem";
 
 export default function KeyFeatures() {
   return (
@@ -48,6 +49,10 @@ export default function KeyFeatures() {
             <Route
               path="/key-features/statemanagement"
               component={StateManagement}
+            />
+            <Route
+              path="/key-features/richecosystem"
+              component={RichEcosystem}
             />
           </Switch>
         </div>
