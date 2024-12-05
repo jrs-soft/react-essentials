@@ -18,7 +18,7 @@ export default function KeyFeatures() {
   return (
     <>
       <Sidebar />
-      <div className="relative md:ml-64 bg-blueGray-100 min-h-screen flex flex-col">
+      <div className="relative md:ml-custom bg-blueGray-100 min-h-screen flex flex-col">
         <Header />
         <div className="flex-grow p-8">
           <h1 className="text-3xl font-bold">Key Features</h1>

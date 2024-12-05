@@ -79,6 +79,9 @@ module.exports = {
       backgroundSize: {
         full: "100%",
       },
+      spacing: {
+        'custom': '304px', // Add 80 if it's missing
+      },
     },
   },
   variants: [

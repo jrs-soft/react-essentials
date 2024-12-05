@@ -17,7 +17,7 @@ export default function Index() {
                 React Essentials
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                React Essentials is a project that aims to explore the fundamentals of React.
+                React Essentials is a project designed to delve into the core principles of React.
               </p>
               <div className="mt-12">
                 <Link
