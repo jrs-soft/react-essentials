@@ -14,6 +14,7 @@ import DeclarativeProgramming from "views/key-features/DeclarativeProgramming";
 import UnidirectionalDataFlow from "views/key-features/UnidirectionalDataFlow";
 import StateManagement from "views/key-features/StateManagement";
 import RichEcosystem from "views/key-features/RichEcosystem";
+import Hooks from "views/key-features/Hooks";
 
 export default function KeyFeatures() {
   return (
@@ -53,6 +54,10 @@ export default function KeyFeatures() {
             <Route
               path="/key-features/richecosystem"
               component={RichEcosystem}
+            />
+            <Route
+              path="/key-features/hooks"
+              component={Hooks}
             />
           </Switch>
         </div>

@@ -85,6 +85,12 @@ const IndexDropdown = () => {
         >
           Rich Ecosystem
         </Link>
+        <Link
+          to="/key-features/hooks"
+          className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        >
+          Hooks
+        </Link>
       </div>
     </>
   );
